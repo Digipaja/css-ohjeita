@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.gallery {
+    width: 90vw;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /*flex-flow: row wrap;*/
+    padding: 0 5px;
+}
+
+.gallery .column {
+    flex: 100%;
+}
+
+.gallery .column img {
+    transition: 0.5s;
+    filter: grayscale(100%);
+}
+
+.gallery .column img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.03);
+    
+}
+
+
+
+@media screen and (min-width: 660px) {
+    .gallery .column {
+        flex: 50%;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .gallery .column {
+        flex: 25%;
+    }
+}
+
