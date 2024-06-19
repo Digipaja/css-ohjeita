@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sivun nimi</title>
+        
+        <style>
+            body {
+                background-color: #555;
+                text-align: center;
+                color: #ddd;
+                text-shadow: 1px 1px 4px #222;
+                font-family: 'Rockwell', 'Georgia', sans-serif;
+            }
+            
+
+            
+            #box {
+                width: 200px;
+                height: 200px;
+                background-color: rgb(87,170,200);
+                margin: 20vh auto 2em auto;
+                box-shadow: 0px 4px 15px #222;
+                cursor: pointer;
+            }
+            
+
+        </style>
+    </head>
+    
+    <body>
+    
+        <div class="wrapper">
+            <div id='box' onclick='newColor()'></div>
+            <p id="koodi"></p>
+        </div>
+        
+        <script>
+            
+            // Tämä toteuttaa funktion sivun latautuessa ensimmäistä kertaa, jolloin myös ensimmäinen väri on satunnainen:
+            onload = function() {
+                newColor();
+            }
+            
+            function newColor() {
+                var vari1 = randomColor();
+                var vari2 = randomColor();
+                var vari3 = randomColor();
+               
+               var uusiVari = 'rgb(' + vari1 +', '+vari2+', '+vari3+')'; 
+                document.getElementById('box').style.backgroundColor = uusiVari;
+                
+                document.getElementById("koodi").innerHTML = uusiVari;
+            }
+            
+            function randomColor() {
+                return Math.floor(Math.random() *256);
+            }
+            
+            
+        
+        
+        </script>
+    </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fontit ja muita CSS-muotoiluja</title>
+        <link rel="stylesheet" href="#">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;700&display=swap" rel="stylesheet">
+        
+        <style>
+            body {
+                font-size: 1.1em;
+                padding: 2em; 
+                font-family: 'Raleway', sans-serif;
+            }
+            
+            p {
+            }
+            
+            code {
+                font-size: 1.1em;
+                color: coral;
+            }
+            
+            .sisennys {
+                margin-left: 2em;
+            }
+            
+            .box {
+                width: 200px;
+                height: 200px;
+                margin: 0.5em;
+                border: 2px solid black;
+                box-sizing: border-box;
+            }
+            
+            .button {
+                cursor: pointer;
+                background-color: lightgray;
+                border: none;
+            }
+            
+            .button:hover {
+                box-shadow: 0px 5px 10px #444;
+            }
+            
+            a {
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    
+    <body>
+    
+        <h1>Fontit</h1>
+        <h2>Fontin koko ja muotoilut</h2>
+        <p><code>font-size:</code> &#8592; muuttaa fontin kokoa</p>
+        
+        
+        <p><code>font-weight:</code> &#8592; muuttaa fontin voimakkuutta; 
+            <span style="font-weight: lighter;">lighter</span> tai <span style="font-weight: bolder;">bolder</span></p>
+        <p><code>font-style:</code> &#8592; muuttaa fontin korostusta, esim. <span style="font-style: italic;">italic</span></p>
+        <p><code>color:</code> &#8592; muuttaa fontin väriä</p>
+        
+        <h2>Font-family</h2>
+        <p><code>font-family:</code> &#8592; muuttaa kirjasinperheen.</p>
+        
+        <div class="sisennys">
+            <p>Esim. <code>font-family: Helvetica, Arial, sans-serif;</code></p>
+        
+            <p>Selain käyttää ensimmäistä lueteltua fonttia tai fonttityyppiä, mikä on saatavilla. Jos käytät jotakin epätyypillistä fonttia, on mahdollista, ettei sivun käyttäjällä ole tätä fonttia käytössä. Tällöin selain näyttää jonkin oletuskirjasimen. Lisäämässä css-muotoiluun usean font-family-arvon pilkuilla erotettuna, voidaan antaa vaihtoehtoisia kirjasinperheitä, jos ensimmäistä vaihtoehtoa ei löydy.</p>
+        
+            <p>Fonteille voi antaa myös yleisen kirjasinperheen kuten <code>serif</code> (<i>päätteellinen kirjasin</i>), <code>sans-serif</code> (<i>päätteetön kirjasin</i>) tai <code>monospace</code> (<i>tasalevyinen kirjasin</i>). Tällöin käytettävä fontti valitaan selaimen asetuksten mukaan.</p>
+            
+            <h3>Webfontit</h3>
+            <p>Helpoin tapa käyttää erilaisia kirjasintyyppejä, on viitata verkossa olevaan fonttitiedostoon. Tällöin kyseistä kirjasinta voidaan käyttää riippumatta siitä, mitä fontteja käyttäjällä on.</p>
+            <p>Fontti voi olla tarjolla omalta palvelimelta tai julkisesta palvelusta kuten <a href="https://www.google.com/fonts">Google Fonts</a> tai <a href="https://fontlibrary.org/">Font Library</a>. Näiltä sivuilta saa suoraan html-koodin, jonka voit liittaa html-tiedostosi head-tagien sisään:</p>
+            <p><code> &lt;link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet"&gt;</code></p>
+        </div>
+        
+        <h2>Tekstin muunnokset</h2>
+        <p><code>text-transform: uppercase;</code> &#8592  <span style="text-transform: uppercase;">Kaikki kirjaimet isolla</span></p>
+        
+        <p><code>text-transform: lowercase;</code> &#8592  <span style="text-transform: lowercase;">Kaikki kirjaimet pienellä</span></p>
+        
+        <p><code>text-transform: capitalize;</code> &#8592  <span style="text-transform: capitalize;">Kaikki alkukirjaimet isolla</span></p>
+        
+        <h2>Tekstin koristelu</h2>
+        <p><code>text-decoration: underline;</code> &#8592 <span style="text-decoration: underline;">alleviivaa</span> tekstin</p>
+        <p><code>text-decoration: line-through;</code> &#8592 <span style="text-decoration: line-through;">yliviivaa</span> tekstin</p>
+        <p><code>text-decoration: overline;</code> &#8592 piirtää viivan tekstin <span style="text-decoration: overline;">yläpuolelle</span></p>
+        
+        <p><code>text-shadow: 2px 2px 3px color;</code> &#8592  <span style="text-shadow: -2px 2px 3px #000; color: white;">Tekee tekstille varjon</span></p>
+     
+        
+        <h1>Muotoiluja elementeille</h1>
+        <div class="sisennys">
+            <div class="box"></div>
+            <p><code>border-radius:</code> &#8592 pyöristää div-elementin reunat</p>
+            <div class="box" style="border-radius: 10%"></div>
+            <p><code>box-shadow:</code> &#8592 antaa elementille varjon</p>
+            <div class="box" style="box-shadow: 0px 5px 10px red; border: none;"></div>
+            <p>Myös div-elementeille voi antaa <code>:hover</code>-efektejä</p>
+            <div class="box button" ></div>
+        </div>
+        
+    </body>
+</html>

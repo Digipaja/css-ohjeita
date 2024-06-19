@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--https://css-tricks.com/snippets/css/a-guide-to--flexbox/-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flexbox</title>
+        <link rel="stylesheet" href="#">
+        
+        <style>
+            body {
+                font-size: 1.1em;
+            }
+            
+            code {
+                font-size: 1.1em;
+                color: coral;
+            }
+            
+            .flexbox {
+                display: flex;
+                flex-direction: row;
+            }
+            
+            .flexboxItem {
+                background-color: lightgrey;
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                text-align: center;
+            } 
+            
+            .row-reverse {
+                flex-direction: row-reverse;
+            }
+            
+            .column {
+                flex-direction: column;
+            }
+            
+            .flex-300 {
+                flex: 300px;
+            }
+            
+            .wrap {
+                flex-wrap: wrap;
+            }
+            
+            .flex-img {
+                width: 300px;
+                height: auto;
+                
+                   
+            }
+            
+            .flex-img img {
+                width: 100%;
+                display: flex;
+            }
+            
+            .square {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .height-200 {
+                height: 200px;
+            }
+            
+            .fit {
+                height: 100%;
+                object-fit: cover;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h1>Esimerkkejä Flexboxin käytöstä</h1>
+        <h2>Flex-direction</h2>
+        <p>Div-elementtejä, joilla korkeus ja leveys 50px eikä varsinaisia flex-muotoiluja:</p>
+        <div class="flexbox">
+            <div class="flexboxItem">1</div>
+            <div class="flexboxItem">2</div>
+            <div class="flexboxItem">3</div>
+            <div class="flexboxItem">4</div>
+            <div class="flexboxItem">5</div>
+        </div>
+        
+        <p>Flexbox-containerille annettu <code>flex-direction: row-reverse;</code>:</p>
+        <div class="flexbox row-reverse">
+            <div class="flexboxItem">1</div>
+            <div class="flexboxItem">2</div>
+            <div class="flexboxItem">3</div>
+            <div class="flexboxItem">4</div>
+            <div class="flexboxItem">5</div>
+        </div>
+        
+        <p>Flexbox-containerille annettu <code>flex-direction: column;</code>:</p>
+        <div class="flexbox column">
+            <div class="flexboxItem">1</div>
+            <div class="flexboxItem">2</div>
+            <div class="flexboxItem">3</div>
+            <div class="flexboxItem">4</div>
+            <div class="flexboxItem">5</div>
+        </div>
+        
+        <h2>Flex vs. width ja flex-wrap</h2>
+        <p>Flexbox-itemeille annettu <code>flex: 300px;</code>. Div-elementit muuttavat leveytensä sellaisiksi, että ne mahtuvat kaikki katseluikkunaan.</p>
+        <div class="flexbox">
+            <div class="flexboxItem flex-300">1</div>
+            <div class="flexboxItem flex-300">2</div>
+            <div class="flexboxItem flex-300">3</div>
+            <div class="flexboxItem flex-300">4</div>
+            <div class="flexboxItem flex-300">5</div>
+        </div>
+        
+        <p>Flexbox-containerille anntettu ominaisuus <code>flex-wrap: wrap</code>, jolloin jos kaikki elementit eivät mahdu vähintään 300px levyisinä riville, ne menevät seuraavalle riville ja täyttävät sen.</p>
+        <p>Voit kokeilla, mitä tapahtuu tälle ja edelliselle esimerkille, jos vaihdat luokan <code>flex-300</code> ominaisuuden <code>flex: 300px;</code> ominaisuuden <code>width: 300px;</code>.</p>
+        <div class="flexbox wrap">
+            <div class="flexboxItem flex-300">1</div>
+            <div class="flexboxItem flex-300">2</div>
+            <div class="flexboxItem flex-300">3</div>
+            <div class="flexboxItem flex-300">4</div>
+            <div class="flexboxItem flex-300">5</div>
+        </div>
+        
+        
+        <h2>Align-items</h2>
+        <p>Flexbox-itemeiden asettelua voi muuttaa myös pystysuunnassa.</p>
+        <p>Ei muita muotoiluja kuin muutettu yksittäisten divien korkeutta:</p>
+        <div class="flexbox">
+            <div class="flexboxItem" style="height: 50px;">1</div>
+            <div class="flexboxItem" style="height: 80px;">2</div>
+            <div class="flexboxItem" style="height: 120px;">3</div>
+            <div class="flexboxItem" style="height: 70px;">4</div>
+            <div class="flexboxItem" style="height: 30px;">5</div>
+        </div>
+        
+        <p>Annettu flexbox-containerille ominaisuus <code>align-items: center;</code>:</p>
+        <div class="flexbox" style="align-items: center;">
+            <div class="flexboxItem" style="height: 50px;">1</div>
+            <div class="flexboxItem" style="height: 80px;">2</div>
+            <div class="flexboxItem" style="height: 120px;">3</div>
+            <div class="flexboxItem" style="height: 70px;">4</div>
+            <div class="flexboxItem" style="height: 30px;">5</div>
+        </div>
+        
+        <p>Annettu flexbox-containerille ominaisuus <code>align-items: flex-end;</code>:</p>
+        
+        <div class="flexbox" style="align-items: flex-end;">
+            <div class="flexboxItem" style="height: 50px;">1</div>
+            <div class="flexboxItem" style="height: 80px;">2</div>
+            <div class="flexboxItem" style="height: 120px;">3</div>
+            <div class="flexboxItem" style="height: 70px;">4</div>
+            <div class="flexboxItem" style="height: 30px;">5</div>
+        </div>
+        
+        <h2>Flexbox ja kuvat</h2>
+        <p>Tässä on lisätty flex-itemeihin sisälle kuva, jonka leveys on 100% eli saman levyinen kuin flex-item. Lisäksi flex-itemien <code>height: auto;</code>, jotta seuraava kappale alkaisi niiden jälkeen eikä niiden päältä.</p>
+        <div class="flexbox">
+            <div class="flexboxItem flex-img"><img src="Images/kuva1.jpg"></div>
+            <div class="flexboxItem flex-img"><img src="Images/kuva2.jpg"></div>
+            <div class="flexboxItem flex-img"><img src="Images/kuva3.jpg"></div>
+            <div class="flexboxItem flex-img"><img src="Images/kuva4.jpg"></div>
+            <div class="flexboxItem flex-img"><img src="Images/kuva5.jpg"></div>
+        </div>
+        
+        <p>Seuraavassa jokaisen flexbox-itemin korkeudeksi on asetettu <code>height: 200px;</code> ja jokaiselle img-elementille on annettu ominaisuus <code>object-fit: cover;</code>. Nyt jokainen kuva skaalautuu siten, että se peittää isäntä-divin muuttamatta kuvasuhdetta.</p>
+        <div class="flexbox">
+            <div class="flexboxItem height-200 flex-img"><img class="fit" src="Images/kuva1.jpg"></div>
+            <div class="flexboxItem height-200 flex-img"><img class="fit" src="Images/kuva2.jpg"></div>
+            <div class="flexboxItem height-200 flex-img"><img class="fit" src="Images/kuva3.jpg"></div>
+            <div class="flexboxItem height-200 flex-img"><img class="fit" src="Images/kuva4.jpg"></div>
+            <div class="flexboxItem height-200 flex-img"><img class="fit" src="Images/kuva5.jpg"></div>
+        </div>
+        
+        <h2>Lisää:</h2>
+        <p>Flexboxista on paljon tutoriaaleja ja materiaaleja olemassa. Täältä saat esimerkiksi hyvän koonnin flexboxin erilaisista ominaisuuksista: <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS-TRICKS: A Complete Guide to Flexbox</a>.</p>
+        
+    </body>
+</html>
